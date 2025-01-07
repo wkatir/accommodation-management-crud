@@ -1,6 +1,7 @@
 <?php include '../src/Views/layouts/header.php'; ?>
 
-<h1>Available Accommodations</h1>
+<h1>Welcome to Accommodation Management</h1>
+<p>Explore our accommodations below:</p>
 
 <table>
     <thead>
@@ -8,7 +9,6 @@
             <th>Name</th>
             <th>Description</th>
             <th>Image</th>
-            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -17,12 +17,6 @@
                 <td><?= $accommodation['name']; ?></td>
                 <td><?= $accommodation['description']; ?></td>
                 <td><img src="<?= $accommodation['image_url']; ?>" alt="<?= $accommodation['name']; ?>" style="width: 100px;"></td>
-                <td>
-                    <form action="/add-accommodation" method="POST">
-                        <input type="hidden" name="accommodation_id" value="<?= $accommodation['id']; ?>">
-                        <button type="submit">Add to My Account</button>
-                    </form>
-                </td>
             </tr>
         <?php endforeach; ?>
     </tbody>

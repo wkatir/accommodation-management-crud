@@ -1,0 +1,51 @@
+# Composer dependencies
+/vendor/
+
+# Node modules (if used)
+/node_modules/
+
+# Environment variables
+.env
+
+# Cache and logs
+/storage/
+*.log
+*.cache
+
+# IDE-specific files
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# System-specific files
+.DS_Store
+Thumbs.db
+
+# Session files
+sessions/
+*.sess
+
+# Backup files
+*.bak
+*.swp
+*.tmp
+
+# PHPUnit
+/phpunit.xml
+/phpunit.xml.dist
+/.phpunit.result.cache
+
+# Laravel specific (if applicable)
+bootstrap/cache/*
+storage/framework/*
+storage/logs/*
+
+# Ignore uploaded content
+/public/uploads/
+uploads/
+
+# Ignore other temporary files
+*.zip
+*.tar.gz
+*.rar
