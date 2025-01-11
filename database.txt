@@ -1,0 +1,49 @@
+-- Crear la base de datos
+CREATE DATABASE alojamientos_db;
+USE alojamientos_db;
+
+-- Tabla de usuarios
+CREATE TABLE usuarios (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    tipo_usuario ENUM('normal', 'admin') DEFAULT 'normal',
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Tabla de alojamientos
+CREATE TABLE alojamientos (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(200) NOT NULL,
+    descripcion TEXT,
+    precio DECIMAL(10,2) NOT NULL,
+    ubicacion VARCHAR(200),
+    imagen_url VARCHAR(255),
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Tabla de relación usuario-alojamiento
+CREATE TABLE usuario_alojamientos (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    usuario_id INT,
+    alojamiento_id INT,
+    fecha_seleccion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
+    FOREIGN KEY (alojamiento_id) REFERENCES alojamientos(id)
+);
+
+-- Insertar usuario administrador por defecto
+INSERT INTO usuarios (nombre, email, password, tipo_usuario) 
+VALUES ('Admin', 'admin@example.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin');
+
+-- Insertar algunos alojamientos de ejemplo
+INSERT INTO alojamientos (nombre, descripcion, precio, ubicacion, imagen_url) VALUES
+('Villa Marina', 'Hermosa villa frente al mar con 3 habitaciones', 250.00, 'Playa del Carmen', 'img/villa1.jpg'),
+('Cabaña Montaña', 'Acogedora cabaña en la montaña', 120.00, 'Sierra Nevada', 'img/cabana1.jpg'),
+('Apartamento Centro', 'Moderno apartamento en el centro de la ciudad', 180.00, 'Madrid', 'img/apto1.jpg');
+
+Para el usuario administrador proporcionado en la base de datos (admin@example.com), la contraseña es "password". Este es el string hasheado equivalente a la palabra "password" usando bcrypt.
+Entonces puedes iniciar sesión con:
+Email: admin@example.com
+Contraseña: password
