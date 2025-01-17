@@ -28,7 +28,7 @@ if ($es_admin) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Cuenta</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/cuenta.css">
 </head>
 <body>
     <header>
@@ -76,7 +76,7 @@ if ($es_admin) {
                         <input type="file" id="imagen" name="imagen" accept="image/*" required>
                     </div>
                     
-                    <button type="submit" class="btn-primary">Agregar Alojamiento</button>
+                    <button type="submit" class="btn-explorer">Agregar Alojamiento</button>
                 </form>
 
                 <div class="alojamientos-list">
@@ -87,7 +87,7 @@ if ($es_admin) {
                             <div class="alojamiento-info">
                                 <h4><?php echo $alojamiento['nombre']; ?></h4>
                                 <p><?php echo $alojamiento['ubicacion']; ?></p>
-                                <p class="precio">€<?php echo number_format($alojamiento['precio'], 2); ?></p>
+                                <p class="precio">$<?php echo number_format($alojamiento['precio'], 2); ?></p>
                             </div>
                         </div>
                     <?php endwhile; ?>
@@ -117,7 +117,7 @@ if ($es_admin) {
                     </div>
                 <?php else: ?>
                     <p class="no-alojamientos">Aún no has seleccionado ningún alojamiento.</p>
-                    <a href="index.php" class="btn-primary">Explorar Alojamientos</a>
+                    <a href="index.php" class="btn-explorer">Explorar Alojamientos</a>
                 <?php endif; ?>
             </section>
         <?php endif; ?>

@@ -1,0 +1,145 @@
+/* Estilo general del body */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://res.cloudinary.com/dksv7n9bg/image/upload/v1736229260/gssgkln7xcxals7dqycd.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+/* Contenedor principal */
+.container {
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Tarjeta de login */
+.login-card h2 {
+    margin: 0;
+    color: #007BFF;
+    font-size: 24px;
+    font-weight: bold;
+    --width-of-input: 200px;
+    --border-height: 1px;
+    --border-before-color: rgba(221, 221, 221, 0.39);
+    --border-after-color: #5891ff;
+    --input-hovered-color: #4985e01f;
+}
+
+.login-card p {
+    margin: 10px 0 20px;
+    font-size: 16px;
+    color: white;
+}
+
+/* Animacion de inputs */ 
+.form__group {
+    position: relative;
+    padding: 20px 0 0;
+    width: 100%;
+    margin: 0% 0% 3% 0%;
+}
+  
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 17px;
+    color: black;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+  
+.form__field::placeholder {
+    color: transparent;
+}
+  
+.form__field:placeholder-shown ~ .form__label {
+    font-size: 17px;
+    cursor: text;
+    top: 20px;
+}
+  
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    color: #9b9b9b;
+    pointer-events: none;
+}
+  
+.form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #116399, #38caef);
+    border-image-slice: 1;
+}
+  
+.form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    color: #007BFF;
+    font-weight: 700;
+}
+  
+  /* resetear los inputs */
+.form__field:required, .form__field:invalid {
+    box-shadow: none;
+}
+
+/* Estilo para el botón */
+button {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    color: white;
+    border-color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #007BFF;
+    color: white;
+    border-color: #007BFF;
+    transition: 0.4s;
+}
+
+/* Links adicionales */
+.extra-links {
+    margin-top: 20px;
+}
+
+.extra-links a {
+    display: block;
+    color: #007BFF;
+    text-decoration: none;
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.extra-links a:hover {
+    text-decoration: underline;
+}

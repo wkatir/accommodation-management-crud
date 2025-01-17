@@ -13,7 +13,7 @@ $resultado = $conexion->query($query);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alojamientos - Inicio</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <header>
@@ -46,7 +46,7 @@ $resultado = $conexion->query($query);
                     <div class="alojamiento-info">
                         <h3><?php echo $alojamiento['nombre']; ?></h3>
                         <p class="ubicacion"><?php echo $alojamiento['ubicacion']; ?></p>
-                        <p class="precio">€<?php echo number_format($alojamiento['precio'], 2); ?> por noche</p>
+                        <p class="precio">$<?php echo number_format($alojamiento['precio'], 2); ?> por noche</p>
                         <?php if(isset($_SESSION['usuario_id'])): ?>
                             <a href="seleccionar_alojamiento.php?id=<?php echo $alojamiento['id']; ?>" class="btn-seleccionar">Seleccionar</a>
                         <?php endif; ?>

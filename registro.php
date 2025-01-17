@@ -37,34 +37,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/registro.css">
 </head>
 <body>
-    <div class="auth-container">
+    <div class="container register-card">
         <h2>Crear Cuenta</h2>
+        
         <?php if(isset($error)): ?>
             <div class="error-message"><?php echo $error; ?></div>
         <?php endif; ?>
         
-        <form class="auth-form" method="POST">
-            <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
+        <form method="POST">
+            <div>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
             </div>
             
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+            <div>
+                <input type="email" id="email" name="email" placeholder="Email" required>
             </div>
             
-            <div class="form-group">
-                <label for="password">Contraseña:</label>
-                <input type="password" id="password" name="password" required>
+            <div>
+                <input type="password" id="password" name="password" placeholder="Contraseña" required>
             </div>
             
-            <button type="submit" class="btn-primary">Registrarse</button>
+            <button type="submit">Registrarse</button>
         </form>
         
-        <p>¿Ya tienes cuenta? <a href="login.php">Inicia sesión aquí</a></p>
+        <div class="extra-links">
+            <p>¿Ya tienes cuenta? <a href="login.php">Inicia sesión aquí</a></p>
+        </div>
     </div>
 </body>
+</html>

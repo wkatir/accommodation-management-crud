@@ -33,30 +33,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    <div class="auth-container">
+    <div class="container login-card">
         <h2>Iniciar Sesión</h2>
+        
         <?php if(isset($error)): ?>
             <div class="error-message"><?php echo $error; ?></div>
         <?php endif; ?>
-        
-        <form class="auth-form" method="POST">
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+        <p>Accede a tu cuenta para continuar con la reserva de alojamiento.</p>
+        <form method="POST">
+            <div class="form__group">
+                <input type="email" id="email" name="email" class="form__field" placeholder="Email" required>
+                <label for="email" class="form__label">Email:</label>
             </div>
             
-            <div class="form-group">
-                <label for="password">Contraseña:</label>
-                <input type="password" id="password" name="password" required>
+            <div class="form__group">
+                <input type="password" id="password" name="password" class="form__field" placeholder="Contraseña" required>
+                <label for="password" class="form__label">Contraseña:</label>
             </div>
             
-            <button type="submit" class="btn-primary">Iniciar Sesión</button>
+            <button type="submit">Iniciar Sesión</button>
         </form>
         
-        <p>¿No tienes cuenta? <a href="registro.php">Regístrate aquí</a></p>
+        <div class="extra-links">
+            <p>¿No tienes cuenta? <a href="registro.php">Regístrate aquí</a></p>
+        </div>
     </div>
 </body>
 </html>
